@@ -1,4 +1,12 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// RetroSpy Wii/Wii U/NES Classic/SNES Classic Firmware for Arduino
+// v1.0
+// RetroSpy written by zoggins
 
+// ---------- Uncomment for debugging output --------------
+//#define DEBUG
+// ---------- Uncomment for a kinda general purpose I2C analyzer --------------
+//#define ANALYZE
 
 byte rawData[1024];
 byte cleanData[274];
@@ -14,7 +22,6 @@ void setup(void)
   delay(5);
 }
 
-
 uint8_t   current_portb = 0;
 uint8_t   last_portb;
 int       i2c_index  = 0;
@@ -24,8 +31,7 @@ bool      isEncrypted = false;
 byte      encryptionKeySet = 0;
 bool      isKeyThing = false;
 byte      keyThing[8];
-//#define ANALYZE
-//#define DEBUG
+
 
 void loop(void)
 {
